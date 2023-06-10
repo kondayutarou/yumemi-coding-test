@@ -60,15 +60,6 @@ class ViewController: UITableViewController, UISearchBarDelegate {
 
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Detail"{
-            guard let destination = segue.destination as? ViewController2 else {
-                return
-            }
-            destination.vc1 = self
-        }
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return repo.count
     }
@@ -87,8 +78,12 @@ class ViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // 画面遷移時に呼ばれる
         idx = indexPath.row
-        performSegue(withIdentifier: "Detail", sender: self)
-
+        let storyboard = UIStoryboard(name: "DetailsViewController", bundle: nil)
+        guard let viewController = storyboard.instantiateInitialViewController() as? DetailsViewController else {
+            return
+        }
+        // TODO: ViewControllerを渡さない
+        viewController.vc1 = self
+        navigationController?.pushViewController(viewController, animated: false)
     }
-
 }
