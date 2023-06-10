@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Combine
 
 final class DetailsViewController: UIViewController {
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -18,31 +19,26 @@ final class DetailsViewController: UIViewController {
     @IBOutlet weak var issuesLabel: UILabel!
 
     var apiResponse: GithubRepositoryListItemResponse!
+    var cancellableSet: Set<AnyCancellable> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        languageLabel.text = "Written in \(apiResponse.language ?? "")"
-//        starsLabel.text = "\(apiResponse.stargazersCount) stars"
-//        watchersLabel.text = "\(apiResponse.watchersCount) watchers"
-//        forksLabel.text = "\(apiResponse.forksCount) forks"
-//        issuesLabel.text = "\(apiResponse.openIssuesCount) open issues"
-        getImage()
-
+        languageLabel.text = "Written in \(apiResponse.language ?? "")"
+        starsLabel.text = "\(apiResponse.stargazersCount) stars"
+        watchersLabel.text = "\(apiResponse.watchersCount) watchers"
+        forksLabel.text = "\(apiResponse.forksCount) forks"
+        issuesLabel.text = "\(apiResponse.openIssuesCount) open issues"
+        titleLabel.text = apiResponse.fullName
     }
 
-    func getImage() {
-//        titleLabel.text = apiResponse.fullName
-//
-//        guard let owner = apiResponse.owner else {
-//            return
-//        }
-//        let imgURL = owner.avatarURL
-//        URLSession.shared.dataTask(with: URL(string: imgURL)!) { (data, _, _) in
-//            let img = UIImage(data: data!)!
-//            DispatchQueue.main.async {
-//                self.avatarImageView.image = img
-//            }
-//        }.resume()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        subscribeToStore()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        cancellableSet.removeAll()
+        super.viewWillDisappear(animated)
     }
 }

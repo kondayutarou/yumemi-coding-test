@@ -9,7 +9,7 @@
 import Foundation
 
 func githubRepositoryMiddleware() -> Middleware<AppState> {
-    return { _, action, dispatcher in
+    return { state, action, dispatcher in
         guard case let .githubRepository(action) = action else {
             return
         }
@@ -19,6 +19,14 @@ func githubRepositoryMiddleware() -> Middleware<AppState> {
             Task {
                 await dispatcher.services.githubRepositoryService.fetchGithubRepositoryList(
                     with: query, dispatcher: dispatcher
+                )
+            }
+        case let .fetchAvatarImage(index: index):
+            Task {
+                guard let avatarURL = state.githubRepositoryState.repositoryList[index].owner?.avatarURL else { return }
+                await dispatcher.services.githubRepositoryService.fetchAvatarImage(
+                    avatarURL: avatarURL,
+                    dispatcher: dispatcher
                 )
             }
         default:

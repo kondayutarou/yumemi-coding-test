@@ -19,6 +19,8 @@ struct AppState: ReduxState {
 
 struct GithubRepositoryState: ReduxState {
     var repositoryList: [GithubRepositoryListItemResponse] = []
+    // TODO: repositoryListのプロパティとして定義する
+    var avatarData: Data?
 }
 
 struct Services {
