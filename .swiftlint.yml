@@ -1,2 +1,5 @@
+disabled_rules:
+  - todo
+
 excluded: # paths to ignore during linting. Takes precedence over `included`.
   - iOSEngineerCodeCheck/Assets.xcassets
