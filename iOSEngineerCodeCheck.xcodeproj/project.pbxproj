@@ -180,13 +180,29 @@
 		DB4EE0862A34532F00A310D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DBDBB2272A349ECC00B15216 /* Main */,
+				DBDBB2282A349EDE00B15216 /* Details */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DBDBB2272A349ECC00B15216 /* Main */ = {
+			isa = PBXGroup;
+			children = (
 				BFD945E2244DC5E80012785A /* MainViewController.swift */,
 				DB8968732A347FD20039C37D /* MainViewControllerState.swift */,
 				BFD945E4244DC5E80012785A /* MainViewController.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DBDBB2282A349EDE00B15216 /* Details */ = {
+			isa = PBXGroup;
+			children = (
 				BF0A658C244F2A3B00280FA6 /* DetailsViewController.swift */,
 				DB4D5EA22A34101000002687 /* DetailsViewController.storyboard */,
 			);
-			path = View;
+			path = Details;
 			sourceTree = "<group>";
 		};
 		DBDF8DF72A3459A200035C53 /* Model */ = {
