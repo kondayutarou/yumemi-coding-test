@@ -25,6 +25,7 @@
 		DBDF8E0A2A3473A400035C53 /* GithubRepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF8E092A3473A400035C53 /* GithubRepositoryService.swift */; };
 		DBDF8E0D2A34780500035C53 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF8E0C2A34780500035C53 /* AppReducer.swift */; };
 		DBDF8E0F2A34786100035C53 /* GithubRepositoryReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF8E0E2A34786100035C53 /* GithubRepositoryReducer.swift */; };
+		DBDF8E122A347A3400035C53 /* GithubRepositoryMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF8E112A347A3400035C53 /* GithubRepositoryMiddleware.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		DBDF8E092A3473A400035C53 /* GithubRepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositoryService.swift; sourceTree = "<group>"; };
 		DBDF8E0C2A34780500035C53 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		DBDF8E0E2A34786100035C53 /* GithubRepositoryReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositoryReducer.swift; sourceTree = "<group>"; };
+		DBDF8E112A347A3400035C53 /* GithubRepositoryMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositoryMiddleware.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				DBDF8E0B2A3477EF00035C53 /* Reducer */,
+				DBDF8E102A3479F300035C53 /* Middleware */,
 				DBDF8E062A34720C00035C53 /* Store.swift */,
 			);
 			path = Store;
@@ -225,6 +228,14 @@
 				DBDF8E0E2A34786100035C53 /* GithubRepositoryReducer.swift */,
 			);
 			path = Reducer;
+			sourceTree = "<group>";
+		};
+		DBDF8E102A3479F300035C53 /* Middleware */ = {
+			isa = PBXGroup;
+			children = (
+				DBDF8E112A347A3400035C53 /* GithubRepositoryMiddleware.swift */,
+			);
+			path = Middleware;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,6 +404,7 @@
 				DBDF8E0D2A34780500035C53 /* AppReducer.swift in Sources */,
 				DBDF8E072A34720C00035C53 /* Store.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* DetailsViewController.swift in Sources */,
+				DBDF8E122A347A3400035C53 /* GithubRepositoryMiddleware.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
 				DBDF8DFD2A3462AF00035C53 /* GithubApiResponse.swift in Sources */,
