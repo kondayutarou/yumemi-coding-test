@@ -152,7 +152,6 @@
 				5A0B53B77FFC0AE6BB9DF8AB /* Pods-iOSEngineerCodeCheckTests.debug.xcconfig */,
 				9C01EE36B4ACC58FB7C9B366 /* Pods-iOSEngineerCodeCheckTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
