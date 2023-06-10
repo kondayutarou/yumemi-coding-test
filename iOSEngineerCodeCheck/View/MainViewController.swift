@@ -12,7 +12,7 @@ final class MainViewController: UITableViewController, UISearchBarDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
 
-    var repo: [[String: Any]]=[]
+    private var apiResponse: [GithubRepositoryListItemResponse] = []
 
     var task: URLSessionTask?
     var word: String!
@@ -43,15 +43,16 @@ final class MainViewController: UITableViewController, UISearchBarDelegate {
         if word.count != 0 {
             url = "https://api.github.com/search/repositories?q=\(word!)"
             task = URLSession.shared.dataTask(with: URL(string: url)!) { (data, _, _) in
-                if let obj = try? JSONSerialization.jsonObject(with: data!) as? [String: Any] {
-                    if let items = obj["items"] as? [[String: Any]] {
-                    self.repo = items
-                        DispatchQueue.main.async {
-                            self.tableView.reloadData()
-                        }
-                    }
-                } else {
-                    // TODO: パースエラー
+                guard let data else {return }
+                let decoder = JSONDecoder()
+                do {
+                    let response = try decoder.decode(GithubRepositoryListResponse.self, from: data)
+                    self.apiResponse = response.items
+                } catch let jsonError as NSError {
+                    print(jsonError)
+                }
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
                 }
             }
         // これ呼ばなきゃリストが更新されません
@@ -61,15 +62,15 @@ final class MainViewController: UITableViewController, UISearchBarDelegate {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repo.count
+        return apiResponse.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = UITableViewCell()
-        let repositoryItem = repo[indexPath.row]
-        cell.textLabel?.text = repositoryItem["full_name"] as? String ?? ""
-        cell.detailTextLabel?.text = repositoryItem["language"] as? String ?? ""
+        let repositoryItem = apiResponse[indexPath.row]
+        cell.textLabel?.text = repositoryItem.fullName
+        cell.detailTextLabel?.text = repositoryItem.language
         cell.tag = indexPath.row
         return cell
 
@@ -83,7 +84,7 @@ final class MainViewController: UITableViewController, UISearchBarDelegate {
             return
         }
         // TODO: ViewControllerを渡さない
-        viewController.vc1 = self
+        viewController.apiResponse = apiResponse[idx]
         navigationController?.pushViewController(viewController, animated: false)
     }
 }
