@@ -21,6 +21,8 @@
 		DBDF8DFD2A3462AF00035C53 /* GithubApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF8DFC2A3462AF00035C53 /* GithubApiResponse.swift */; };
 		DBDF8E022A3470CB00035C53 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF8E012A3470CB00035C53 /* Action.swift */; };
 		DBDF8E042A34710000035C53 /* GithubRepositoryAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF8E032A34710000035C53 /* GithubRepositoryAction.swift */; };
+		DBDF8E072A34720C00035C53 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF8E062A34720C00035C53 /* Store.swift */; };
+		DBDF8E0A2A3473A400035C53 /* GithubRepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF8E092A3473A400035C53 /* GithubRepositoryService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		DBDF8DFC2A3462AF00035C53 /* GithubApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubApiResponse.swift; sourceTree = "<group>"; };
 		DBDF8E012A3470CB00035C53 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		DBDF8E032A34710000035C53 /* GithubRepositoryAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositoryAction.swift; sourceTree = "<group>"; };
+		DBDF8E062A34720C00035C53 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		DBDF8E092A3473A400035C53 /* GithubRepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositoryService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,8 @@
 		BFD945DD244DC5E80012785A /* iOSEngineerCodeCheck */ = {
 			isa = PBXGroup;
 			children = (
+				DBDF8E082A34738700035C53 /* Service */,
+				DBDF8E052A3471F900035C53 /* Store */,
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
 				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
 				DBDF8E002A3470B800035C53 /* Action */,
@@ -189,6 +195,22 @@
 				DBDF8E032A34710000035C53 /* GithubRepositoryAction.swift */,
 			);
 			path = Action;
+			sourceTree = "<group>";
+		};
+		DBDF8E052A3471F900035C53 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				DBDF8E062A34720C00035C53 /* Store.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		DBDF8E082A34738700035C53 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				DBDF8E092A3473A400035C53 /* GithubRepositoryService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,7 +373,9 @@
 			files = (
 				DBDF8E042A34710000035C53 /* GithubRepositoryAction.swift in Sources */,
 				BFD945E3244DC5E80012785A /* MainViewController.swift in Sources */,
+				DBDF8E0A2A3473A400035C53 /* GithubRepositoryService.swift in Sources */,
 				DBDF8E022A3470CB00035C53 /* Action.swift in Sources */,
+				DBDF8E072A34720C00035C53 /* Store.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* DetailsViewController.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
