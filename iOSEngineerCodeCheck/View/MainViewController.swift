@@ -9,21 +9,25 @@
 import UIKit
 
 final class MainViewController: UITableViewController, UISearchBarDelegate {
-
     @IBOutlet weak var searchBar: UISearchBar!
 
-    private var apiResponse: [GithubRepositoryListItemResponse] = []
+    private var viewState: MainViewControllerState?
 
-    var task: URLSessionTask?
     var word: String!
     var url: String!
     var idx: Int!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
         searchBar.text = "GitHubのリポジトリを検索できるよー"
         searchBar.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        viewState = MainViewControllerState()
+        viewState?.viewController = self
     }
 
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
@@ -33,7 +37,6 @@ final class MainViewController: UITableViewController, UISearchBarDelegate {
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        task?.cancel()
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -44,14 +47,17 @@ final class MainViewController: UITableViewController, UISearchBarDelegate {
         }
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        viewState = nil
+    }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return apiResponse.count
+        return viewState?.githubRepositoryList.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         let cell = UITableViewCell()
-        let repositoryItem = apiResponse[indexPath.row]
+        guard let repositoryItem = viewState?.githubRepositoryList[indexPath.row] else { return cell }
         cell.textLabel?.text = repositoryItem.fullName
         cell.detailTextLabel?.text = repositoryItem.language
         cell.tag = indexPath.row
@@ -66,8 +72,6 @@ final class MainViewController: UITableViewController, UISearchBarDelegate {
         guard let viewController = storyboard.instantiateInitialViewController() as? DetailsViewController else {
             return
         }
-        // TODO: ViewControllerを渡さない
-        viewController.apiResponse = apiResponse[idx]
         navigationController?.pushViewController(viewController, animated: false)
     }
 }

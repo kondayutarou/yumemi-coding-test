@@ -22,27 +22,27 @@ final class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        languageLabel.text = "Written in \(apiResponse.language ?? "")"
-        starsLabel.text = "\(apiResponse.stargazersCount) stars"
-        watchersLabel.text = "\(apiResponse.watchersCount) watchers"
-        forksLabel.text = "\(apiResponse.forksCount) forks"
-        issuesLabel.text = "\(apiResponse.openIssuesCount) open issues"
+//        languageLabel.text = "Written in \(apiResponse.language ?? "")"
+//        starsLabel.text = "\(apiResponse.stargazersCount) stars"
+//        watchersLabel.text = "\(apiResponse.watchersCount) watchers"
+//        forksLabel.text = "\(apiResponse.forksCount) forks"
+//        issuesLabel.text = "\(apiResponse.openIssuesCount) open issues"
         getImage()
 
     }
 
     func getImage() {
-        titleLabel.text = apiResponse.fullName
-
-        guard let owner = apiResponse.owner else {
-            return
-        }
-        let imgURL = owner.avatarURL
-        URLSession.shared.dataTask(with: URL(string: imgURL)!) { (data, _, _) in
-            let img = UIImage(data: data!)!
-            DispatchQueue.main.async {
-                self.avatarImageView.image = img
-            }
-        }.resume()
+//        titleLabel.text = apiResponse.fullName
+//
+//        guard let owner = apiResponse.owner else {
+//            return
+//        }
+//        let imgURL = owner.avatarURL
+//        URLSession.shared.dataTask(with: URL(string: imgURL)!) { (data, _, _) in
+//            let img = UIImage(data: data!)!
+//            DispatchQueue.main.async {
+//                self.avatarImageView.image = img
+//            }
+//        }.resume()
     }
 }
