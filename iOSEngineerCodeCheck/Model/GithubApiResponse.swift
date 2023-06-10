@@ -8,9 +8,7 @@
 
 import Foundation
 
-/**
- * See: https://docs.github.com/en/rest/search?apiVersion=2022-11-28#search-repositories
- */
+// See: https://docs.github.com/en/rest/search?apiVersion=2022-11-28#search-repositories
 // MARK: - GithubRepositoryListResponse
 struct GithubRepositoryListResponse: Codable {
     let items: [GithubRepositoryListItemResponse]
@@ -39,7 +37,7 @@ struct GithubRepositoryListItemResponse: Codable {
 
 struct GithubRepositoryListItemOwnerResponse: Codable {
     let avatarURL: String
-    
+
     enum CodingKeys: String, CodingKey {
         case avatarURL = "avatar_url"
     }

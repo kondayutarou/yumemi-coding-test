@@ -18,7 +18,7 @@ final class DetailsViewController: UIViewController {
     @IBOutlet weak var issuesLabel: UILabel!
 
     var apiResponse: GithubRepositoryListItemResponse!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
