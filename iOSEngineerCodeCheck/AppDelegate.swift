@@ -8,6 +8,12 @@
 
 import UIKit
 
+let store = Store(
+    reducer: appReducer,
+    state: AppState(),
+    middlewares: [githubRepositoryMiddleware()]
+)
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
