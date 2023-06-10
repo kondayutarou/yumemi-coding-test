@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Combine
 
 final class MainViewController: UITableViewController, UISearchBarDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
 
-    private var viewState: MainViewControllerState?
+    var cancellableSet: Set<AnyCancellable> = []
+    var githubRepositoryList: [GithubRepositoryListItemResponse] = []
 
     var word: String!
     var url: String!
@@ -26,8 +28,8 @@ final class MainViewController: UITableViewController, UISearchBarDelegate {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        viewState = MainViewControllerState()
-        viewState?.viewController = self
+        super.viewWillAppear(animated)
+        subscribeToStore()
     }
 
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
@@ -48,16 +50,17 @@ final class MainViewController: UITableViewController, UISearchBarDelegate {
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        viewState = nil
+        cancellableSet.removeAll()
+        super.viewWillDisappear(animated)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewState?.githubRepositoryList.count ?? 0
+        return githubRepositoryList.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        guard let repositoryItem = viewState?.githubRepositoryList[indexPath.row] else { return cell }
+        let repositoryItem = githubRepositoryList[indexPath.row]
         cell.textLabel?.text = repositoryItem.fullName
         cell.detailTextLabel?.text = repositoryItem.language
         cell.tag = indexPath.row
@@ -72,7 +75,7 @@ final class MainViewController: UITableViewController, UISearchBarDelegate {
         guard let viewController = storyboard.instantiateInitialViewController() as? DetailsViewController else {
             return
         }
-        viewController.apiResponse = viewState?.githubRepositoryList[idx]
+        viewController.apiResponse = githubRepositoryList[idx]
         store.dispatch(.githubRepository(.fetchAvatarImage(index: idx)))
         navigationController?.pushViewController(viewController, animated: false)
     }
