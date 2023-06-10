@@ -14,6 +14,8 @@ func githubRepositoryReducer(_ state: GithubRepositoryState, action: GithubRepos
     switch action {
     case let .didReceiveGithubRepositoryList(result: result):
         state.repositoryList = result
+    case let .didReceiveAvatarImage(data: data):
+        state.avatarData = data
     default:
         break
     }

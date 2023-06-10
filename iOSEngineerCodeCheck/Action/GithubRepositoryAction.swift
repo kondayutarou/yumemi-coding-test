@@ -12,6 +12,6 @@ enum GithubRepositoryAction {
     case fetchGithubRepositoryList(query: String)
     case didReceiveGithubRepositoryList(result: [GithubRepositoryListItemResponse])
     case didReceiveError
-    case fetchAvatarImage(avatarURL: String)
+    case fetchAvatarImage(index: Int)
     case didReceiveAvatarImage(data: Data)
 }

@@ -72,6 +72,8 @@ final class MainViewController: UITableViewController, UISearchBarDelegate {
         guard let viewController = storyboard.instantiateInitialViewController() as? DetailsViewController else {
             return
         }
+        viewController.apiResponse = viewState?.githubRepositoryList[idx]
+        store.dispatch(.githubRepository(.fetchAvatarImage(index: idx)))
         navigationController?.pushViewController(viewController, animated: false)
     }
 }
