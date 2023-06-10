@@ -23,6 +23,8 @@
 		DBDF8E042A34710000035C53 /* GithubRepositoryAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF8E032A34710000035C53 /* GithubRepositoryAction.swift */; };
 		DBDF8E072A34720C00035C53 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF8E062A34720C00035C53 /* Store.swift */; };
 		DBDF8E0A2A3473A400035C53 /* GithubRepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF8E092A3473A400035C53 /* GithubRepositoryService.swift */; };
+		DBDF8E0D2A34780500035C53 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF8E0C2A34780500035C53 /* AppReducer.swift */; };
+		DBDF8E0F2A34786100035C53 /* GithubRepositoryReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF8E0E2A34786100035C53 /* GithubRepositoryReducer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		DBDF8E032A34710000035C53 /* GithubRepositoryAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositoryAction.swift; sourceTree = "<group>"; };
 		DBDF8E062A34720C00035C53 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		DBDF8E092A3473A400035C53 /* GithubRepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositoryService.swift; sourceTree = "<group>"; };
+		DBDF8E0C2A34780500035C53 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		DBDF8E0E2A34786100035C53 /* GithubRepositoryReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositoryReducer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +204,7 @@
 		DBDF8E052A3471F900035C53 /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				DBDF8E0B2A3477EF00035C53 /* Reducer */,
 				DBDF8E062A34720C00035C53 /* Store.swift */,
 			);
 			path = Store;
@@ -211,6 +216,15 @@
 				DBDF8E092A3473A400035C53 /* GithubRepositoryService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		DBDF8E0B2A3477EF00035C53 /* Reducer */ = {
+			isa = PBXGroup;
+			children = (
+				DBDF8E0C2A34780500035C53 /* AppReducer.swift */,
+				DBDF8E0E2A34786100035C53 /* GithubRepositoryReducer.swift */,
+			);
+			path = Reducer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,7 +388,9 @@
 				DBDF8E042A34710000035C53 /* GithubRepositoryAction.swift in Sources */,
 				BFD945E3244DC5E80012785A /* MainViewController.swift in Sources */,
 				DBDF8E0A2A3473A400035C53 /* GithubRepositoryService.swift in Sources */,
+				DBDF8E0F2A34786100035C53 /* GithubRepositoryReducer.swift in Sources */,
 				DBDF8E022A3470CB00035C53 /* Action.swift in Sources */,
+				DBDF8E0D2A34780500035C53 /* AppReducer.swift in Sources */,
 				DBDF8E072A34720C00035C53 /* Store.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* DetailsViewController.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
