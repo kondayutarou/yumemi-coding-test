@@ -30,7 +30,7 @@ final class Store<StoreState: ReduxState>: ObservableObject {
     @Published var state: StoreState
     private(set) var middlewares: [Middleware<StoreState>]
     private(set) var services: Services
-    
+
     init(
         reducer: @escaping Reducer<StoreState>,
         state: StoreState,
@@ -43,12 +43,12 @@ final class Store<StoreState: ReduxState>: ObservableObject {
             githubRepositoryService: GithubRepositoryServiceImpl()
         )
     }
-    
+
     func dispatch(_ action: Action) {
         DispatchQueue.main.async {
             self.state = self.reducer(self.state, action)
         }
-        
+
         middlewares.forEach { middleware in
             middleware(state, action, self)
         }

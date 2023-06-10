@@ -24,7 +24,7 @@ final class MainViewController: UITableViewController, UISearchBarDelegate {
         searchBar.text = "GitHubのリポジトリを検索できるよー"
         searchBar.delegate = self
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         viewState = MainViewControllerState()
         viewState?.viewController = self

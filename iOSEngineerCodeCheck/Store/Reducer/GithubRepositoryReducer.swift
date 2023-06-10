@@ -10,13 +10,13 @@ import Foundation
 
 func githubRepositoryReducer(_ state: GithubRepositoryState, action: GithubRepositoryAction) -> GithubRepositoryState {
     var state = state
-    
+
     switch action {
     case let .didReceiveGithubRepositoryList(result: result):
         state.repositoryList = result
     default:
         break
     }
-    
+
     return state
 }

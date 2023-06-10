@@ -11,7 +11,7 @@ import Combine
 
 final class MainViewControllerState {
     weak var viewController: MainViewController?
-    var cancellableSet: Array<AnyCancellable> = []
+    var cancellableSet: [AnyCancellable] = []
     private(set) var githubRepositoryList: [GithubRepositoryListItemResponse] = []
 
     init() {

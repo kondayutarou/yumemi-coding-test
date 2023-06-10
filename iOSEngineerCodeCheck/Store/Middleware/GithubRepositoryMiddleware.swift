@@ -9,11 +9,11 @@
 import Foundation
 
 func githubRepositoryMiddleware() -> Middleware<AppState> {
-    return { state, action, dispatcher in
+    return { _, action, dispatcher in
         guard case let .githubRepository(action) = action else {
             return
         }
-        
+
         switch action {
         case let .fetchGithubRepositoryList(query: query):
             Task {
