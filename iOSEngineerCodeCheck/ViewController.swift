@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UITableViewController, UISearchBarDelegate {
 
-    @IBOutlet weak var SchBr: UISearchBar!
+    @IBOutlet weak var searchBar: UISearchBar!
 
     var repo: [[String: Any]]=[]
 
@@ -22,8 +22,8 @@ class ViewController: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        SchBr.text = "GitHubのリポジトリを検索できるよー"
-        SchBr.delegate = self
+        searchBar.text = "GitHubのリポジトリを検索できるよー"
+        searchBar.delegate = self
     }
 
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
@@ -74,9 +74,9 @@ class ViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = UITableViewCell()
-        let rp = repo[indexPath.row]
-        cell.textLabel?.text = rp["full_name"] as? String ?? ""
-        cell.detailTextLabel?.text = rp["language"] as? String ?? ""
+        let repositoryItem = repo[indexPath.row]
+        cell.textLabel?.text = repositoryItem["full_name"] as? String ?? ""
+        cell.detailTextLabel?.text = repositoryItem["language"] as? String ?? ""
         cell.tag = indexPath.row
         return cell
 
