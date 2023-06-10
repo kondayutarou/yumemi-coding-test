@@ -17,7 +17,7 @@ final class DetailsViewController: UIViewController {
     @IBOutlet weak var forksLabel: UILabel!
     @IBOutlet weak var issuesLabel: UILabel!
     
-    var vc1: ViewController!
+    var vc1: MainViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
