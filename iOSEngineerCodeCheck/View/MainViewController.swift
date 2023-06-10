@@ -37,28 +37,11 @@ final class MainViewController: UITableViewController, UISearchBarDelegate {
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-
         word = searchBar.text!
 
         if word.count != 0 {
-            url = "https://api.github.com/search/repositories?q=\(word!)"
-            task = URLSession.shared.dataTask(with: URL(string: url)!) { (data, _, _) in
-                guard let data else {return }
-                let decoder = JSONDecoder()
-                do {
-                    let response = try decoder.decode(GithubRepositoryListResponse.self, from: data)
-                    self.apiResponse = response.items
-                } catch let jsonError as NSError {
-                    print(jsonError)
-                }
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            }
-        // これ呼ばなきゃリストが更新されません
-        task?.resume()
+            store.dispatch(.githubRepository(.fetchGithubRepositoryList(query: word)))
         }
-
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
