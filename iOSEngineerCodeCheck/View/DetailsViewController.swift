@@ -17,39 +17,32 @@ final class DetailsViewController: UIViewController {
     @IBOutlet weak var forksLabel: UILabel!
     @IBOutlet weak var issuesLabel: UILabel!
 
-    var vc1: MainViewController!
+    var apiResponse: GithubRepositoryListItemResponse!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let repo = vc1.repo[vc1.idx]
-
-        languageLabel.text = "Written in \(repo["language"] as? String ?? "")"
-        starsLabel.text = "\(repo["stargazers_count"] as? Int ?? 0) stars"
-        watchersLabel.text = "\(repo["wachers_count"] as? Int ?? 0) watchers"
-        forksLabel.text = "\(repo["forks_count"] as? Int ?? 0) forks"
-        issuesLabel.text = "\(repo["open_issues_count"] as? Int ?? 0) open issues"
+        languageLabel.text = "Written in \(apiResponse.language ?? "")"
+        starsLabel.text = "\(apiResponse.stargazersCount) stars"
+        watchersLabel.text = "\(apiResponse.watchersCount) watchers"
+        forksLabel.text = "\(apiResponse.forksCount) forks"
+        issuesLabel.text = "\(apiResponse.openIssuesCount) open issues"
         getImage()
 
     }
 
     func getImage() {
+        titleLabel.text = apiResponse.fullName
 
-        let repo = vc1.repo[vc1.idx]
-
-        titleLabel.text = repo["full_name"] as? String
-
-        if let owner = repo["owner"] as? [String: Any] {
-            if let imgURL = owner["avatar_url"] as? String {
-                URLSession.shared.dataTask(with: URL(string: imgURL)!) { (data, _, _) in
-                    let img = UIImage(data: data!)!
-                    DispatchQueue.main.async {
-                        self.avatarImageView.image = img
-                    }
-                }.resume()
-            }
+        guard let owner = apiResponse.owner else {
+            return
         }
-
+        let imgURL = owner.avatarURL
+        URLSession.shared.dataTask(with: URL(string: imgURL)!) { (data, _, _) in
+            let img = UIImage(data: data!)!
+            DispatchQueue.main.async {
+                self.avatarImageView.image = img
+            }
+        }.resume()
     }
-
 }
