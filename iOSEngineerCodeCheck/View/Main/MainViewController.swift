@@ -17,7 +17,9 @@ final class MainViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.register(
+            UINib(nibName: "RepositoryCell", bundle: nil), forCellReuseIdentifier: RepositoryCell.cellIdentifier
+        )
         searchBar.delegate = self
     }
 
@@ -37,13 +39,19 @@ final class MainViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        let repositoryItem = githubRepositoryList[indexPath.row]
-        cell.textLabel?.text = repositoryItem.fullName
-        cell.detailTextLabel?.text = repositoryItem.language
-        cell.tag = indexPath.row
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: RepositoryCell.cellIdentifier, for: indexPath)
+            as? RepositoryCell {
+            let repositoryItem = githubRepositoryList[indexPath.row]
+            if let language = repositoryItem.language {
+                cell.languageLabel.text = language
+            } else {
+                cell.languageLabel.isHidden = true
+            }
+            cell.titleLabel.text = repositoryItem.fullName
+            return cell
+        }
 
+        return UITableViewCell()
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -23,6 +23,8 @@
 		DBDA95552A35ADCC00C57CD3 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = DBDA95542A35ADCC00C57CD3 /* Nimble */; };
 		DBDA95582A35ADF000C57CD3 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = DBDA95572A35ADF000C57CD3 /* Quick */; };
 		DBDA955B2A35AE3400C57CD3 /* GithubRepositoryReducerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDA955A2A35AE3400C57CD3 /* GithubRepositoryReducerTest.swift */; };
+		DBDA955D2A35B98E00C57CD3 /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDA955C2A35B98E00C57CD3 /* RepositoryCell.swift */; };
+		DBDA955F2A35B9A400C57CD3 /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBDA955E2A35B9A400C57CD3 /* RepositoryCell.xib */; };
 		DBDF8DFD2A3462AF00035C53 /* GithubApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF8DFC2A3462AF00035C53 /* GithubApiResponse.swift */; };
 		DBDF8E022A3470CB00035C53 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF8E012A3470CB00035C53 /* Action.swift */; };
 		DBDF8E042A34710000035C53 /* GithubRepositoryAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF8E032A34710000035C53 /* GithubRepositoryAction.swift */; };
@@ -73,6 +75,8 @@
 		DB863AD42A34B54C004DC00C /* MainViewController+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Combine.swift"; sourceTree = "<group>"; };
 		DBC76B282A3599D7006F73DD /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		DBDA955A2A35AE3400C57CD3 /* GithubRepositoryReducerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositoryReducerTest.swift; sourceTree = "<group>"; };
+		DBDA955C2A35B98E00C57CD3 /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
+		DBDA955E2A35B9A400C57CD3 /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
 		DBDF8DFC2A3462AF00035C53 /* GithubApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubApiResponse.swift; sourceTree = "<group>"; };
 		DBDF8E012A3470CB00035C53 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		DBDF8E032A34710000035C53 /* GithubRepositoryAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositoryAction.swift; sourceTree = "<group>"; };
@@ -209,6 +213,8 @@
 				BFD945E2244DC5E80012785A /* MainViewController.swift */,
 				DB863AD42A34B54C004DC00C /* MainViewController+Combine.swift */,
 				BFD945E4244DC5E80012785A /* MainViewController.storyboard */,
+				DBDA955C2A35B98E00C57CD3 /* RepositoryCell.swift */,
+				DBDA955E2A35B9A400C57CD3 /* RepositoryCell.xib */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -391,6 +397,7 @@
 				DB4D5EA32A34101000002687 /* DetailsViewController.storyboard in Resources */,
 				BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */,
 				BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */,
+				DBDA955F2A35B9A400C57CD3 /* RepositoryCell.xib in Resources */,
 				BFD945E6244DC5E80012785A /* MainViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +463,7 @@
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
 				DBDF8DFD2A3462AF00035C53 /* GithubApiResponse.swift in Sources */,
+				DBDA955D2A35B98E00C57CD3 /* RepositoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
