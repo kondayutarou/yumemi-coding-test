@@ -11,14 +11,14 @@ import Combine
 
 final class DetailsViewController: UIViewController {
     @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var languageLabel: UILabel!
-    @IBOutlet weak var starsLabel: UILabel!
-    @IBOutlet weak var watchersLabel: UILabel!
-    @IBOutlet weak var forksLabel: UILabel!
-    @IBOutlet weak var issuesLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var languageLabel: UILabel!
+    @IBOutlet private weak var starsLabel: UILabel!
+    @IBOutlet private weak var watchersLabel: UILabel!
+    @IBOutlet private weak var forksLabel: UILabel!
+    @IBOutlet private weak var issuesLabel: UILabel!
 
-    var viewData: GithubRepositoryListItemResponse!
+    private(set) var viewData: GithubRepositoryListItemResponse!
     var cancellableSet: Set<AnyCancellable> = []
 
     static func make(viewData: GithubRepositoryListItemResponse) -> DetailsViewController? {

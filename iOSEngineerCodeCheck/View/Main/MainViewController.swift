@@ -10,7 +10,7 @@ import UIKit
 import Combine
 
 final class MainViewController: UITableViewController {
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet private weak var searchBar: UISearchBar!
 
     var cancellableSet: Set<AnyCancellable> = []
     var githubRepositoryList: [GithubRepositoryListItemResponse] = []
