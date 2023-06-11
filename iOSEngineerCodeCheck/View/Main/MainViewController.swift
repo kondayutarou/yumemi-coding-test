@@ -39,12 +39,7 @@ final class MainViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.repositoryCell, for: indexPath) {
             let repositoryItem = githubRepositoryList[indexPath.row]
-            if let language = repositoryItem.language {
-                cell.languageLabel.text = language
-            } else {
-                cell.languageLabel.isHidden = true
-            }
-            cell.titleLabel.text = repositoryItem.fullName
+            cell.updateCell(viewData: repositoryItem)
             return cell
         }
 
