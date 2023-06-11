@@ -12,5 +12,4 @@ import UIKit
 final class RepositoryCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var languageLabel: UILabel!
-    static let cellIdentifier = "RepositoryCell"
 }
