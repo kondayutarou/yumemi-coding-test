@@ -15,8 +15,6 @@ final class MainViewController: UITableViewController {
     var cancellableSet: Set<AnyCancellable> = []
     var githubRepositoryList: [GithubRepositoryListItemResponse] = []
 
-    var idx: Int!
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,14 +46,13 @@ final class MainViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 画面遷移時に呼ばれる
-        idx = indexPath.row
+        let tappedIndex = indexPath.row
         let storyboard = UIStoryboard(name: "DetailsViewController", bundle: nil)
         guard let viewController = storyboard.instantiateInitialViewController() as? DetailsViewController else {
             return
         }
-        viewController.apiResponse = githubRepositoryList[idx]
-        store.dispatch(.githubRepository(.fetchAvatarImage(index: idx)))
+        viewController.apiResponse = githubRepositoryList[tappedIndex]
+        store.dispatch(.githubRepository(.fetchAvatarImage(index: tappedIndex)))
         navigationController?.pushViewController(viewController, animated: false)
     }
 }
