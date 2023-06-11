@@ -33,7 +33,11 @@ final class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        languageLabel.text = "Written in \(viewData.language ?? "")"
+        if let language = viewData.language {
+            languageLabel.text = "Written in \(language)"
+        } else {
+            languageLabel.isHidden = true
+        }
         starsLabel.text = "\(viewData.stargazersCount) stars"
         watchersLabel.text = "\(viewData.watchersCount) watchers"
         forksLabel.text = "\(viewData.forksCount) forks"
