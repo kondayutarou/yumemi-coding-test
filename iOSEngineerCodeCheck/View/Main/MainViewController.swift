@@ -9,13 +9,12 @@
 import UIKit
 import Combine
 
-final class MainViewController: UITableViewController, UISearchBarDelegate {
+final class MainViewController: UITableViewController {
     @IBOutlet weak var searchBar: UISearchBar!
 
     var cancellableSet: Set<AnyCancellable> = []
     var githubRepositoryList: [GithubRepositoryListItemResponse] = []
 
-    var word: String!
     var url: String!
     var idx: Int!
 
@@ -30,23 +29,6 @@ final class MainViewController: UITableViewController, UISearchBarDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         subscribeToStore()
-    }
-
-    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        // ↓こうすれば初期のテキストを消せる
-        searchBar.text = ""
-        return true
-    }
-
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    }
-
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        word = searchBar.text!
-
-        if word.count != 0 {
-            store.dispatch(.githubRepository(.fetchGithubRepositoryList(query: word)))
-        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -78,5 +60,22 @@ final class MainViewController: UITableViewController, UISearchBarDelegate {
         viewController.apiResponse = githubRepositoryList[idx]
         store.dispatch(.githubRepository(.fetchAvatarImage(index: idx)))
         navigationController?.pushViewController(viewController, animated: false)
+    }
+}
+
+extension MainViewController: UISearchBarDelegate {
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        // ↓こうすれば初期のテキストを消せる
+        searchBar.text = ""
+        return true
+    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let word = searchBar.text, word.count > 0 else { return }
+
+        store.dispatch(.githubRepository(.fetchGithubRepositoryList(query: word)))
     }
 }
