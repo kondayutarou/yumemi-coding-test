@@ -42,4 +42,11 @@ final class RepositoryCell: UITableViewCell {
             subInfoStackView.isHidden = true
         }
     }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        popularityLabel.isHidden = false
+        languageLabel.isHidden = false
+        subInfoStackView.isHidden = false
+    }
 }
