@@ -16,6 +16,7 @@ struct GithubRepositoryListResponse: Codable {
 
 // MARK: - GithubRepositoryListItemResponse
 struct GithubRepositoryListItemResponse: Codable {
+    let id: Int
     let language: String?
     let stargazersCount: Int
     let watchersCount: Int
@@ -25,6 +26,7 @@ struct GithubRepositoryListItemResponse: Codable {
     let owner: GithubRepositoryListItemOwnerResponse?
 
     enum CodingKeys: String, CodingKey {
+        case id
         case language
         case stargazersCount = "stargazers_count"
         case watchersCount = "watchers_count"
@@ -32,6 +34,12 @@ struct GithubRepositoryListItemResponse: Codable {
         case openIssuesCount = "open_issues_count"
         case fullName = "full_name"
         case owner
+    }
+}
+
+extension GithubRepositoryListItemResponse: Equatable {
+    static func == (lhs: GithubRepositoryListItemResponse, rhs: GithubRepositoryListItemResponse) -> Bool {
+        lhs.id == rhs.id
     }
 }
 
