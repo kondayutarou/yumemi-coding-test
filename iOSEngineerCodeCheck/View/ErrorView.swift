@@ -21,7 +21,7 @@ struct ErrorView: View {
     }
 }
 
-struct ErrorView_Preview: PreviewProvider {
+struct ErrorViewPreview: PreviewProvider {
     static var previews: some View {
         ErrorView(errorDescription: "Internet unavailable")
     }
