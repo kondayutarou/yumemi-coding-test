@@ -14,6 +14,10 @@ struct ErrorView: View {
 
     var body: some View {
         Text(errorDescription)
+            .foregroundColor(Color("text"))
+            .padding(16.0)
+            .background(Color("primary"))
+            .cornerRadius(16.0)
     }
 }
 
