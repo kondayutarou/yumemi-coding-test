@@ -26,7 +26,7 @@ final class GithubRepositoryServiceImpl: GithubRepositoryService {
             let decoded = try JSONDecoder().decode(GithubRepositoryListResponse.self, from: data)
             dispatcher.dispatch(.githubRepository(.didReceiveGithubRepositoryList(result: decoded.items)))
         } catch {
-            dispatcher.dispatch(.githubRepository(.didReceiveError))
+            dispatcher.dispatch(.githubRepository(.githubRepositoryListError(error)))
         }
     }
 
@@ -39,7 +39,6 @@ final class GithubRepositoryServiceImpl: GithubRepositoryService {
             }
             dispatcher.dispatch(.githubRepository(.didReceiveAvatarImage(data: data)))
         } catch {
-            dispatcher.dispatch(.githubRepository(.didReceiveError))
         }
     }
 }
