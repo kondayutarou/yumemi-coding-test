@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,12 +15,14 @@
 		BFD945E6244DC5E80012785A /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD945E4244DC5E80012785A /* MainViewController.storyboard */; };
 		BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFD945E7244DC5EB0012785A /* Assets.xcassets */; };
 		BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */; };
-		BFD945F6244DC5EB0012785A /* IOSEngineerCodeCheckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945F5244DC5EB0012785A /* IOSEngineerCodeCheckTests.swift */; };
 		BFD94601244DC5EC0012785A /* IOSEngineerCodeCheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD94600244DC5EC0012785A /* IOSEngineerCodeCheckUITests.swift */; };
 		DB4D5EA32A34101000002687 /* DetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB4D5EA22A34101000002687 /* DetailsViewController.storyboard */; };
 		DB863AD32A34B07C004DC00C /* DetailsViewController+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB863AD22A34B07C004DC00C /* DetailsViewController+Combine.swift */; };
 		DB863AD52A34B54C004DC00C /* MainViewController+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB863AD42A34B54C004DC00C /* MainViewController+Combine.swift */; };
 		DBC76B292A3599D7006F73DD /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC76B282A3599D7006F73DD /* ErrorView.swift */; };
+		DBDA95552A35ADCC00C57CD3 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = DBDA95542A35ADCC00C57CD3 /* Nimble */; };
+		DBDA95582A35ADF000C57CD3 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = DBDA95572A35ADF000C57CD3 /* Quick */; };
+		DBDA955B2A35AE3400C57CD3 /* GithubRepositoryReducerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDA955A2A35AE3400C57CD3 /* GithubRepositoryReducerTest.swift */; };
 		DBDF8DFD2A3462AF00035C53 /* GithubApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF8DFC2A3462AF00035C53 /* GithubApiResponse.swift */; };
 		DBDF8E022A3470CB00035C53 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF8E012A3470CB00035C53 /* Action.swift */; };
 		DBDF8E042A34710000035C53 /* GithubRepositoryAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF8E032A34710000035C53 /* GithubRepositoryAction.swift */; };
@@ -62,7 +64,6 @@
 		BFD945EA244DC5EB0012785A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFD945EC244DC5EB0012785A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFD945F1244DC5EB0012785A /* iOSEngineerCodeCheckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSEngineerCodeCheckTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFD945F5244DC5EB0012785A /* IOSEngineerCodeCheckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSEngineerCodeCheckTests.swift; sourceTree = "<group>"; };
 		BFD945F7244DC5EB0012785A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFD945FC244DC5EB0012785A /* iOSEngineerCodeCheckUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSEngineerCodeCheckUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD94600244DC5EC0012785A /* IOSEngineerCodeCheckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSEngineerCodeCheckUITests.swift; sourceTree = "<group>"; };
@@ -71,6 +72,7 @@
 		DB863AD22A34B07C004DC00C /* DetailsViewController+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsViewController+Combine.swift"; sourceTree = "<group>"; };
 		DB863AD42A34B54C004DC00C /* MainViewController+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Combine.swift"; sourceTree = "<group>"; };
 		DBC76B282A3599D7006F73DD /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		DBDA955A2A35AE3400C57CD3 /* GithubRepositoryReducerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositoryReducerTest.swift; sourceTree = "<group>"; };
 		DBDF8DFC2A3462AF00035C53 /* GithubApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubApiResponse.swift; sourceTree = "<group>"; };
 		DBDF8E012A3470CB00035C53 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		DBDF8E032A34710000035C53 /* GithubRepositoryAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositoryAction.swift; sourceTree = "<group>"; };
@@ -93,7 +95,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBDA95582A35ADF000C57CD3 /* Quick in Frameworks */,
 				1CAC711845C7539F636E353D /* libPods-iOSEngineerCodeCheckTests.a in Frameworks */,
+				DBDA95552A35ADCC00C57CD3 /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +153,7 @@
 		BFD945F4244DC5EB0012785A /* iOSEngineerCodeCheckTests */ = {
 			isa = PBXGroup;
 			children = (
-				BFD945F5244DC5EB0012785A /* IOSEngineerCodeCheckTests.swift */,
+				DBDA95592A35AE2300C57CD3 /* Reducer */,
 				BFD945F7244DC5EB0012785A /* Info.plist */,
 			);
 			path = iOSEngineerCodeCheckTests;
@@ -189,6 +193,14 @@
 				DBC76B282A3599D7006F73DD /* ErrorView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		DBDA95592A35AE2300C57CD3 /* Reducer */ = {
+			isa = PBXGroup;
+			children = (
+				DBDA955A2A35AE3400C57CD3 /* GithubRepositoryReducerTest.swift */,
+			);
+			path = Reducer;
 			sourceTree = "<group>";
 		};
 		DBDBB2272A349ECC00B15216 /* Main */ = {
@@ -298,6 +310,10 @@
 				BFD945F3244DC5EB0012785A /* PBXTargetDependency */,
 			);
 			name = iOSEngineerCodeCheckTests;
+			packageProductDependencies = (
+				DBDA95542A35ADCC00C57CD3 /* Nimble */,
+				DBDA95572A35ADF000C57CD3 /* Quick */,
+			);
 			productName = iOSEngineerCodeCheckTests;
 			productReference = BFD945F1244DC5EB0012785A /* iOSEngineerCodeCheckTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -352,6 +368,10 @@
 				Base,
 			);
 			mainGroup = BFD945D2244DC5E80012785A;
+			packageReferences = (
+				DBDA95532A35ADCC00C57CD3 /* XCRemoteSwiftPackageReference "Nimble" */,
+				DBDA95562A35ADF000C57CD3 /* XCRemoteSwiftPackageReference "Quick" */,
+			);
 			productRefGroup = BFD945DC244DC5E80012785A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -443,7 +463,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFD945F6244DC5EB0012785A /* IOSEngineerCodeCheckTests.swift in Sources */,
+				DBDA955B2A35AE3400C57CD3 /* GithubRepositoryReducerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -766,6 +786,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DBDA95532A35ADCC00C57CD3 /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		DBDA95562A35ADF000C57CD3 /* XCRemoteSwiftPackageReference "Quick" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Quick.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DBDA95542A35ADCC00C57CD3 /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DBDA95532A35ADCC00C57CD3 /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
+		DBDA95572A35ADF000C57CD3 /* Quick */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DBDA95562A35ADF000C57CD3 /* XCRemoteSwiftPackageReference "Quick" */;
+			productName = Quick;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BFD945D3244DC5E80012785A /* Project object */;
 }
