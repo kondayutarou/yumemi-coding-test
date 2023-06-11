@@ -15,7 +15,6 @@ final class MainViewController: UITableViewController {
     var cancellableSet: Set<AnyCancellable> = []
     var githubRepositoryList: [GithubRepositoryListItemResponse] = []
 
-    var url: String!
     var idx: Int!
 
     override func viewDidLoad() {
