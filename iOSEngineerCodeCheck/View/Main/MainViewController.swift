@@ -47,11 +47,11 @@ final class MainViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let tappedIndex = indexPath.row
-        let storyboard = UIStoryboard(name: "DetailsViewController", bundle: nil)
-        guard let viewController = storyboard.instantiateInitialViewController() as? DetailsViewController else {
+        guard let viewController = DetailsViewController.make(
+            viewData: store.state.githubRepositoryState.repositoryList[tappedIndex]
+        ) else {
             return
         }
-        viewController.apiResponse = githubRepositoryList[tappedIndex]
         store.dispatch(.githubRepository(.fetchAvatarImage(index: tappedIndex)))
         navigationController?.pushViewController(viewController, animated: false)
     }
