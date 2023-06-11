@@ -8,7 +8,6 @@
 
 import Foundation
 import Combine
-import Toast
 import SwiftUI
 
 extension MainViewController {
