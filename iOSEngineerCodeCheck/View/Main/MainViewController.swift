@@ -62,5 +62,6 @@ extension MainViewController: UISearchBarDelegate {
         guard let word = searchBar.text, word.count > 0 else { return }
 
         store.dispatch(.githubRepository(.fetchGithubRepositoryList(query: word)))
+        view.endEditing(true)
     }
 }
