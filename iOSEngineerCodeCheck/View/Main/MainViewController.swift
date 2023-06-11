@@ -9,44 +9,21 @@
 import UIKit
 import Combine
 
-final class MainViewController: UITableViewController, UISearchBarDelegate {
-    @IBOutlet weak var searchBar: UISearchBar!
+final class MainViewController: UITableViewController {
+    @IBOutlet private weak var searchBar: UISearchBar!
 
     var cancellableSet: Set<AnyCancellable> = []
     var githubRepositoryList: [GithubRepositoryListItemResponse] = []
 
-    var word: String!
-    var url: String!
-    var idx: Int!
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        searchBar.text = "GitHubのリポジトリを検索できるよー"
         searchBar.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         subscribeToStore()
-    }
-
-    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        // ↓こうすれば初期のテキストを消せる
-        searchBar.text = ""
-        return true
-    }
-
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    }
-
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        word = searchBar.text!
-
-        if word.count != 0 {
-            store.dispatch(.githubRepository(.fetchGithubRepositoryList(query: word)))
-        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -69,14 +46,21 @@ final class MainViewController: UITableViewController, UISearchBarDelegate {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 画面遷移時に呼ばれる
-        idx = indexPath.row
-        let storyboard = UIStoryboard(name: "DetailsViewController", bundle: nil)
-        guard let viewController = storyboard.instantiateInitialViewController() as? DetailsViewController else {
+        let tappedIndex = indexPath.row
+        guard let viewController = DetailsViewController.make(
+            viewData: store.state.githubRepositoryState.repositoryList[tappedIndex]
+        ) else {
             return
         }
-        viewController.apiResponse = githubRepositoryList[idx]
-        store.dispatch(.githubRepository(.fetchAvatarImage(index: idx)))
+        store.dispatch(.githubRepository(.fetchAvatarImage(index: tappedIndex)))
         navigationController?.pushViewController(viewController, animated: false)
+    }
+}
+
+extension MainViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let word = searchBar.text, word.count > 0 else { return }
+
+        store.dispatch(.githubRepository(.fetchGithubRepositoryList(query: word)))
     }
 }
