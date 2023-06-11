@@ -11,7 +11,7 @@ import Foundation
 enum GithubRepositoryAction {
     case fetchGithubRepositoryList(query: String)
     case didReceiveGithubRepositoryList(result: [GithubRepositoryListItemResponse])
-    case didReceiveError
+    case githubRepositoryListError(_ error: Error)
     case fetchAvatarImage(index: Int)
     case didReceiveAvatarImage(data: Data)
 }

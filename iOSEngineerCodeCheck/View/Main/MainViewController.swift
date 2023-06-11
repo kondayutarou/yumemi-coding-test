@@ -23,6 +23,7 @@ final class MainViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
         subscribeToStore()
     }
 
@@ -62,5 +63,6 @@ extension MainViewController: UISearchBarDelegate {
         guard let word = searchBar.text, word.count > 0 else { return }
 
         store.dispatch(.githubRepository(.fetchGithubRepositoryList(query: word)))
+        view.endEditing(true)
     }
 }

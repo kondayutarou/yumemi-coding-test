@@ -20,6 +20,7 @@
 		DB4D5EA32A34101000002687 /* DetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB4D5EA22A34101000002687 /* DetailsViewController.storyboard */; };
 		DB863AD32A34B07C004DC00C /* DetailsViewController+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB863AD22A34B07C004DC00C /* DetailsViewController+Combine.swift */; };
 		DB863AD52A34B54C004DC00C /* MainViewController+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB863AD42A34B54C004DC00C /* MainViewController+Combine.swift */; };
+		DBC76B292A3599D7006F73DD /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC76B282A3599D7006F73DD /* ErrorView.swift */; };
 		DBDF8DFD2A3462AF00035C53 /* GithubApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF8DFC2A3462AF00035C53 /* GithubApiResponse.swift */; };
 		DBDF8E022A3470CB00035C53 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF8E012A3470CB00035C53 /* Action.swift */; };
 		DBDF8E042A34710000035C53 /* GithubRepositoryAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF8E032A34710000035C53 /* GithubRepositoryAction.swift */; };
@@ -69,6 +70,7 @@
 		DB4D5EA22A34101000002687 /* DetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsViewController.storyboard; sourceTree = "<group>"; };
 		DB863AD22A34B07C004DC00C /* DetailsViewController+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsViewController+Combine.swift"; sourceTree = "<group>"; };
 		DB863AD42A34B54C004DC00C /* MainViewController+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Combine.swift"; sourceTree = "<group>"; };
+		DBC76B282A3599D7006F73DD /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		DBDF8DFC2A3462AF00035C53 /* GithubApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubApiResponse.swift; sourceTree = "<group>"; };
 		DBDF8E012A3470CB00035C53 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		DBDF8E032A34710000035C53 /* GithubRepositoryAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositoryAction.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			children = (
 				DBDBB2272A349ECC00B15216 /* Main */,
 				DBDBB2282A349EDE00B15216 /* Details */,
+				DBC76B282A3599D7006F73DD /* ErrorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				DB863AD32A34B07C004DC00C /* DetailsViewController+Combine.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* DetailsViewController.swift in Sources */,
 				DB863AD52A34B54C004DC00C /* MainViewController+Combine.swift in Sources */,
+				DBC76B292A3599D7006F73DD /* ErrorView.swift in Sources */,
 				DBDF8E122A347A3400035C53 /* GithubRepositoryMiddleware.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
