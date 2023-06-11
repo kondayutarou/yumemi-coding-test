@@ -9,6 +9,7 @@
 import Foundation
 import Combine
 import Toast
+import SwiftUI
 
 extension MainViewController {
     func subscribeToStore() {
@@ -31,7 +32,9 @@ extension MainViewController {
             .sink { [weak self] error in
                 guard let self else { return }
 
-                self.view.makeToast(error.localizedDescription, position: .top)
+                let viewController = ErrorViewWrapper(rootView: ErrorView(errorDescription: error.localizedDescription))
+                viewController.modalPresentationStyle = .overCurrentContext
+                self.present(viewController, animated: false)
             }
             .store(in: &cancellableSet)
     }
