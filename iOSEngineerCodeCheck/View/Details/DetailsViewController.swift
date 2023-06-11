@@ -22,10 +22,8 @@ final class DetailsViewController: UIViewController {
     var cancellableSet: Set<AnyCancellable> = []
 
     static func make(viewData: GithubRepositoryListItemResponse) -> DetailsViewController? {
-        let storyboard = UIStoryboard(name: "DetailsViewController", bundle: nil)
-        guard let viewController = storyboard.instantiateInitialViewController() as? DetailsViewController else {
-            return nil
-        }
+        guard let viewController = R.storyboard.detailsViewController.instantiateInitialViewController() else { return nil }
+
         viewController.viewData = viewData
         return viewController
     }
