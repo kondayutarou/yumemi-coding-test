@@ -16,6 +16,8 @@
 		BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFD945E7244DC5EB0012785A /* Assets.xcassets */; };
 		BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */; };
 		BFD94601244DC5EC0012785A /* IOSEngineerCodeCheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD94600244DC5EC0012785A /* IOSEngineerCodeCheckUITests.swift */; };
+		DB35CBB62A35C0CD0030226A /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = DB35CBB52A35C0CD0030226A /* RswiftLibrary */; };
+		DB35CBB82A35C0CD0030226A /* rswift in Frameworks */ = {isa = PBXBuildFile; productRef = DB35CBB72A35C0CD0030226A /* rswift */; };
 		DB4D5EA32A34101000002687 /* DetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB4D5EA22A34101000002687 /* DetailsViewController.storyboard */; };
 		DB863AD32A34B07C004DC00C /* DetailsViewController+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB863AD22A34B07C004DC00C /* DetailsViewController+Combine.swift */; };
 		DB863AD52A34B54C004DC00C /* MainViewController+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB863AD42A34B54C004DC00C /* MainViewController+Combine.swift */; };
@@ -92,6 +94,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB35CBB62A35C0CD0030226A /* RswiftLibrary in Frameworks */,
+				DB35CBB82A35C0CD0030226A /* rswift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,8 +299,13 @@
 			buildRules = (
 			);
 			dependencies = (
+				DB35CBBA2A35C13A0030226A /* PBXTargetDependency */,
 			);
 			name = iOSEngineerCodeCheck;
+			packageProductDependencies = (
+				DB35CBB52A35C0CD0030226A /* RswiftLibrary */,
+				DB35CBB72A35C0CD0030226A /* rswift */,
+			);
 			productName = iOSEngineerCodeCheck;
 			productReference = BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */;
 			productType = "com.apple.product-type.application";
@@ -377,6 +386,7 @@
 			packageReferences = (
 				DBDA95532A35ADCC00C57CD3 /* XCRemoteSwiftPackageReference "Nimble" */,
 				DBDA95562A35ADF000C57CD3 /* XCRemoteSwiftPackageReference "Quick" */,
+				DB35CBB42A35C0CD0030226A /* XCRemoteSwiftPackageReference "R" */,
 			);
 			productRefGroup = BFD945DC244DC5E80012785A /* Products */;
 			projectDirPath = "";
@@ -496,6 +506,10 @@
 			target = BFD945DA244DC5E80012785A /* iOSEngineerCodeCheck */;
 			targetProxy = BFD945FD244DC5EB0012785A /* PBXContainerItemProxy */;
 		};
+		DB35CBBA2A35C13A0030226A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = DB35CBB92A35C13A0030226A /* RswiftGenerateInternalResources */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -555,6 +569,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -616,6 +631,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -796,6 +812,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DB35CBB42A35C0CD0030226A /* XCRemoteSwiftPackageReference "R" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		DBDA95532A35ADCC00C57CD3 /* XCRemoteSwiftPackageReference "Nimble" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Quick/Nimble";
@@ -815,6 +839,20 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DB35CBB52A35C0CD0030226A /* RswiftLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DB35CBB42A35C0CD0030226A /* XCRemoteSwiftPackageReference "R" */;
+			productName = RswiftLibrary;
+		};
+		DB35CBB72A35C0CD0030226A /* rswift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DB35CBB42A35C0CD0030226A /* XCRemoteSwiftPackageReference "R" */;
+			productName = rswift;
+		};
+		DB35CBB92A35C13A0030226A /* RswiftGenerateInternalResources */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "plugin:RswiftGenerateInternalResources";
+		};
 		DBDA95542A35ADCC00C57CD3 /* Nimble */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DBDA95532A35ADCC00C57CD3 /* XCRemoteSwiftPackageReference "Nimble" */;
