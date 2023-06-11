@@ -29,7 +29,7 @@
                                 <color key="textColor" systemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="W3M-bx-Rs6">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="W3M-bx-Rs6">
                                 <rect key="frame" x="20" y="600" width="353" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rk-BM-9n1">
@@ -78,6 +78,7 @@
                             <constraint firstItem="W3M-bx-Rs6" firstAttribute="width" secondItem="Dxf-L5-Bjs" secondAttribute="width" id="KLE-AO-YQe"/>
                             <constraint firstItem="W3M-bx-Rs6" firstAttribute="centerX" secondItem="7fE-f0-Ich" secondAttribute="centerX" id="aae-SC-9uL"/>
                             <constraint firstItem="Dxf-L5-Bjs" firstAttribute="centerY" secondItem="j5I-4S-WLC" secondAttribute="centerY" multiplier="0.7" id="jmv-sd-qRz"/>
+                            <constraint firstItem="W3M-bx-Rs6" firstAttribute="top" secondItem="7fE-f0-Ich" secondAttribute="bottom" constant="55.000000000001933" id="oFJ-3J-mO1"/>
                             <constraint firstItem="j5I-4S-WLC" firstAttribute="trailing" secondItem="Dxf-L5-Bjs" secondAttribute="trailing" constant="20" id="pKf-EC-hxD"/>
                             <constraint firstItem="Dxf-L5-Bjs" firstAttribute="leading" secondItem="j5I-4S-WLC" secondAttribute="leading" constant="20" id="uID-o8-4Ax"/>
                         </constraints>
