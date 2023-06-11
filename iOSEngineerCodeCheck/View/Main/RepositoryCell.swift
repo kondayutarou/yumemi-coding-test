@@ -10,9 +10,10 @@ import Foundation
 import UIKit
 
 final class RepositoryCell: UITableViewCell {
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var languageLabel: UILabel!
-    @IBOutlet weak var popularityLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var languageLabel: UILabel!
+    @IBOutlet private weak var popularityLabel: UILabel!
+    @IBOutlet private weak var subInfoStackView: UIStackView!
 
     func updateCell(viewData: GithubRepositoryListItemResponse) {
         if let language = viewData.language {
@@ -35,6 +36,10 @@ final class RepositoryCell: UITableViewCell {
             popularityLabel.text = "⭐⭐⭐⭐"
         default:
             popularityLabel.isHidden = true
+        }
+
+        if languageLabel.isHidden && popularityLabel.isHidden {
+            subInfoStackView.isHidden = true
         }
     }
 }

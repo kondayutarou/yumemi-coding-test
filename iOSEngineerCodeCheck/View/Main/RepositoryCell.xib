@@ -55,6 +55,7 @@
             <connections>
                 <outlet property="languageLabel" destination="FxF-JK-f3U" id="nSf-Af-F94"/>
                 <outlet property="popularityLabel" destination="Bct-Pf-OK1" id="aQP-7y-XpW"/>
+                <outlet property="subInfoStackView" destination="F8n-ii-ba6" id="bK1-pD-Fk4"/>
                 <outlet property="titleLabel" destination="lJY-47-yJE" id="gMg-Wy-oA1"/>
             </connections>
             <point key="canvasLocation" x="-660.30534351145036" y="-17.253521126760564"/>
